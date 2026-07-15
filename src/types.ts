@@ -9,6 +9,7 @@ export interface SquadPlayer {
 }
 
 export interface SocialPost {
+  imageUrl?: string;
   headline: string;
   caption: string;
   hashtags: string[];
@@ -56,7 +57,7 @@ export interface RagResult {
 export interface PipelineLog {
   id: string;
   timestamp: string;
-  level: "INFO" | "SUCCESS" | "WARNING" | "TRIGGER";
+  level: "INFO" | "SUCCESS" | "WARNING" | "ERROR" | "TRIGGER";
   source: string;
   message: string;
 }
