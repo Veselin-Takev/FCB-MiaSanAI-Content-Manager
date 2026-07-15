@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miasanai-enterprise-app
+  namespace: miasanai
+  labels:
+    app: miasanai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: miasanai
+  template:
+    metadata:
+      labels:
+        app: miasanai
+    spec:
+      containers:
+        - name: application
+          image: gcr.io/fcb-media-prod/miasanai:latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            # Mountet das synchronisierte Python-Schlüsselfile direkt in den Container
+            - name: secrets-volume
+              mountPath: /etc/secrets
+              readOnly: true
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 512Mi
+      volumes:
+        - name: secrets-volume
+          secret:
+            # Muss mit dem target.name aus external-secrets-python.yaml übereinstimmen
+            secretName: miasanai-python-keys-secret

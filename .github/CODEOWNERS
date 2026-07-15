@@ -1,0 +1,7 @@
+# Default owners for everything in the repository.
+# Replace with the actual GitHub handle(s) / team(s).
+*                   @veselintakev
+
+# Server / API surface
+/server.ts          @veselintakev
+/src/server/        @veselintakev

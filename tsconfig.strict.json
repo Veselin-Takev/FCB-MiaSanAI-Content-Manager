@@ -1,0 +1,15 @@
+{
+  "//": "Scoped strict type-checking for the clean server core (src/server/**).",
+  "//2": "First step of the strict migration: these modules are authored fully typed.",
+  "//3": "server.ts and the large src/ UI are intentionally NOT yet included; they",
+  "//4": "follow once their remaining implicit-any usage is removed.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/server/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

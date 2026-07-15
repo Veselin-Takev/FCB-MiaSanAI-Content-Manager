@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-fcb-red: #dc052d;
+  --color-fcb-dark: #001f46;
+  --color-fcb-gold: #c3a164;
+  --color-fcb-slate: #121824;
+
+  /* Overriding default slate colors to match Sophisticated Dark theme precisely */
+  --color-slate-950: #0a0a0c;
+  --color-slate-900: #16171b;
+  --color-slate-850: #111114;
+  --color-slate-800: rgba(255, 255, 255, 0.05);
+  --color-slate-700: #1a1b1e;
+  --color-slate-600: #25262b;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+}
+
+@layer base {
+  body {
+    background-color: #0a0a0c;
+    background-image: radial-gradient(circle at top right, #131418, #0a0a0c 50%, #0a0a0c);
+    color: #cbd5e1;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom scrollbars matching the Sophisticated Dark aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 5, 45, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 5, 45, 0.6);
+}
+
+/* FCB Classic Theme Variables & Rule Overrides (High-contrast Red/White) */
+.theme-classic {
+  --color-slate-950: #f8fafc; /* light page background */
+  --color-slate-900: #ffffff; /* main card background */
+  --color-slate-850: #f1f5f9; /* inner panels/tabs background */
+  --color-slate-800: #cbd5e1; /* border color */
+  --color-slate-700: #94a3b8; /* active/hover borders */
+  --color-slate-600: #475569; /* text-slate-600 overrides */
+  --color-slate-500: #64748b; /* text-slate-500 overrides */
+  --color-slate-400: #334155; /* text-slate-400 overrides */
+  --color-slate-300: #1e293b; /* text-slate-300 overrides */
+  --color-slate-200: #dc052d; /* red text accents/links */
+  --color-slate-100: #0f172a; /* main body text */
+}
+
+/* Overriding base rules for body when theme-classic class is active */
+body.theme-classic {
+  background-color: #f8fafc !important;
+  background-image: none !important;
+  color: #0f172a !important;
+}
+
+body.theme-classic ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+body.theme-classic ::-webkit-scrollbar-thumb {
+  background: rgba(220, 5, 45, 0.5) !important;
+}
+
+/* Header style override in classic mode (Red Header bar) */
+body.theme-classic header {
+  background-color: #dc052d !important;
+  border-bottom: 2px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(220, 5, 45, 0.15) !important;
+}
+
+body.theme-classic header h1,
+body.theme-classic header p,
+body.theme-classic header span,
+body.theme-classic header .text-slate-400,
+body.theme-classic header .text-slate-300 {
+  color: #ffffff !important;
+}
+
+body.theme-classic header .bg-slate-950,
+body.theme-classic header .bg-slate-900\/60 {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.theme-classic header button {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.theme-classic header .text-fcb-gold {
+  color: #ffffff !important;
+}
+
+body.theme-classic header .border-fcb-gold\/25 {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* High contrast card & inner shadow overrides for white-theme card design */
+body.theme-classic .bg-slate-900\/40,
+body.theme-classic .bg-slate-900\/60,
+body.theme-classic .bg-slate-900\/95,
+body.theme-classic .bg-slate-950\/40 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04) !important;
+}
+
+body.theme-classic input,
+body.theme-classic textarea,
+body.theme-classic select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.theme-classic input:focus,
+body.theme-classic textarea:focus,
+body.theme-classic select:focus {
+  border-color: #dc052d !important;
+  outline: none !important;
+}
+
+/* Ensure secondary lists and entries have light borders and hover highlights */
+body.theme-classic .bg-slate-950\/60,
+body.theme-classic .bg-slate-950\/20,
+body.theme-classic .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+body.theme-classic .hover\:bg-slate-850:hover,
+body.theme-classic .hover\:bg-slate-950:hover {
+  background-color: #f1f5f9 !important;
+}
+
+body.theme-classic .text-white {
+  color: #0f172a !important;
+}
+
+/* Special icons or gold elements overrides in classic Red/White theme */
+body.theme-classic .text-fcb-gold {
+  color: #dc052d !important;
+}
+
+body.theme-classic .border-fcb-gold\/40,
+body.theme-classic .border-fcb-gold\/20,
+body.theme-classic .border-fcb-gold {
+  border-color: rgba(220, 5, 45, 0.3) !important;
+}
+
+/* Terminals or logs look better preserved as dark blocks even on a light theme */
+body.theme-classic .select-text.font-mono,
+body.theme-classic .select-text.font-mono *,
+body.theme-classic .font-mono.max-h-\[220px\],
+body.theme-classic .font-mono.max-h-\[220px\] * {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+body.theme-classic .font-mono.max-h-\[220px\] span.text-slate-500 {
+  color: #64748b !important;
+}
+

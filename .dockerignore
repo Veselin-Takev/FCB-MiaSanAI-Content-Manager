@@ -1,0 +1,16 @@
+node_modules
+dist
+build
+coverage
+.git
+.github
+.data
+.env*
+!.env.example
+*.log
+.DS_Store
+.vscode
+.idea
+tests
+docs
+kubernetes
