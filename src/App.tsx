@@ -1906,7 +1906,7 @@ export default function App() {
         layout
         key={preset.id}
         draggable={dragHandleActiveId === preset.id}
-        onDragStart={(e) => handlePresetDragStart(e, preset.id)}
+        onDragStart={(e) => handlePresetDragStart(e as any, preset.id)}
         onDragOver={(e) => handlePresetDragOver(e, preset.id)}
         onDrop={(e) => handlePresetDrop(e, preset.id)}
         onDragEnd={() => {
@@ -9272,7 +9272,7 @@ export default function App() {
                                                           title={language === "de" ? "Klicken zum Ändern" : "Click to toggle status"}
                                                           onClick={() => {
                                                             const order: Array<"Draft" | "Needs Work" | "Approved"> = ["Draft", "Needs Work", "Approved"];
-                                                            const nextIdx = (order.indexOf(presetSaveStatus) + 1) % order.length;
+                                                            const nextIdx = (order.indexOf(presetSaveStatus as "Draft" | "Needs Work" | "Approved") + 1) % order.length;
                                                             setPresetSaveStatus(order[nextIdx]);
                                                           }}
                                                         >

@@ -25,7 +25,8 @@
     "types": [
       "node"
     ],
-    "noUncheckedSideEffectImports": false
+    "noUncheckedSideEffectImports": false,
+    "strict": false
   },
   "exclude": [
     "dist",
