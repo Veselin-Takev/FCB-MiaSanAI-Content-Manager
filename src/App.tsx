@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useMemo, useCallback, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Layers, GitFork, Sparkles, Clapperboard, Database, Workflow, 
@@ -14,16 +14,16 @@ import "prismjs/components/prism-json";
 import "prismjs/themes/prism-tomorrow.css";
 
 import { DashboardOverview } from "./components/DashboardOverview";
-import { JourneyBuilder } from "./components/JourneyBuilder";
-import { ContentGenerator } from "./components/ContentGenerator";
-import { VideoStudio } from "./components/VideoStudio";
-import { RagHub } from "./components/RagHub";
-import { SecretManagerQA } from "./components/SecretManagerQA";
-import { AutomationLogs } from "./components/AutomationLogs";
-import { LangGraphAgent } from "./components/LangGraphAgent";
-import { SettingsPanel } from "./components/SettingsPanel";
-import { Analytics } from "./components/Analytics";
-import { ModerationPanel } from "./components/ModerationPanel";
+const JourneyBuilder = lazy(() => import("./components/JourneyBuilder").then(m => ({ default: m.JourneyBuilder })));
+const ContentGenerator = lazy(() => import("./components/ContentGenerator").then(m => ({ default: m.ContentGenerator })));
+const VideoStudio = lazy(() => import("./components/VideoStudio").then(m => ({ default: m.VideoStudio })));
+const RagHub = lazy(() => import("./components/RagHub").then(m => ({ default: m.RagHub })));
+const SecretManagerQA = lazy(() => import("./components/SecretManagerQA").then(m => ({ default: m.SecretManagerQA })));
+const AutomationLogs = lazy(() => import("./components/AutomationLogs").then(m => ({ default: m.AutomationLogs })));
+const LangGraphAgent = lazy(() => import("./components/LangGraphAgent").then(m => ({ default: m.LangGraphAgent })));
+const SettingsPanel = lazy(() => import("./components/SettingsPanel").then(m => ({ default: m.SettingsPanel })));
+const Analytics = lazy(() => import("./components/Analytics").then(m => ({ default: m.Analytics })));
+const ModerationPanel = lazy(() => import("./components/ModerationPanel").then(m => ({ default: m.ModerationPanel })));
 
 import { PipelineLog, DraftSocialPost } from "./types";
 import { INITIAL_LOGS, FCB_BRAND_RULES } from "./data/mockData";
@@ -9970,6 +9970,7 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.15 }}
             >
+              <Suspense fallback={<div className="p-8 text-center text-slate-500 font-mono text-sm">Loading...</div>}>
               {activeTab === "dashboard" && (
                 <DashboardOverview 
                   logs={logs} 
@@ -10048,6 +10049,7 @@ export default function App() {
                   setSpeechEnabled={setSpeechEnabled}
                 />
               )}
+              </Suspense>
             </motion.div>
           </AnimatePresence>
         </main>
