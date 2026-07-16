@@ -132,6 +132,11 @@ export const Analytics: React.FC<AnalyticsProps> = ({ logs, onAddLog, presets = 
 
   return (
     <div className="space-y-6 select-none animate-fadeIn" id="analytics-workspace-container">
+
+      <div className="flex items-center gap-2 text-[11px] font-mono bg-amber-500/10 text-amber-300 border border-amber-500/25 rounded-lg px-3 py-2">
+        <span className="font-bold uppercase tracking-wider">Demo</span>
+        <span className="text-amber-200/80">Simulierte Kennzahlen und Beispieldaten – keine Live-Messwerte.</span>
+      </div>
       
       {/* Upper Grid: Real-time Mapped KPI Widgets */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4" id="analytics-kpi-widgets">
