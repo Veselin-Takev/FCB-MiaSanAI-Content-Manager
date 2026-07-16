@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Datenschutzerklärung – MiaSanAI Content Manager</title>
+<style>
+  :root { --bg:#0a0a0c; --card:#141419; --border:#25262b; --text:#e5e7eb; --muted:#94a3b8; --red:#dc0028; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.65; }
+  .wrap { max-width: 820px; margin:0 auto; padding: 40px 20px 80px; }
+  a { color:#f87171; }
+  h1 { font-size: 1.7rem; margin:0 0 4px; }
+  h2 { font-size: 1.15rem; margin:34px 0 8px; color:#fff; }
+  h3 { font-size: 1rem; margin:20px 0 6px; color:#fff; }
+  .accent { height:4px; width:64px; background:var(--red); border-radius:4px; margin:16px 0 28px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px 26px; }
+  .muted { color:var(--muted); font-size:.92rem; }
+  .ph { background:rgba(220,0,40,.12); border:1px dashed var(--red); border-radius:6px; padding:1px 6px; color:#fca5a5; }
+  .back { display:inline-block; margin-bottom:24px; font-size:.9rem; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.9rem; }
+  th, td { border:1px solid var(--border); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#1c1d23; color:#fff; }
+  footer { margin-top:40px; font-size:.8rem; color:var(--muted); }
+  ul { margin:6px 0 6px 18px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/">&larr; Zurück zur App</a>
+    <h1>Datenschutzerklärung</h1>
+    <div class="accent"></div>
+
+    <div class="card">
+      <p class="muted">
+        Diese Erklärung informiert über die Verarbeitung personenbezogener Daten in
+        der Anwendung „MiaSanAI Content Manager“ (nachfolgend „die Anwendung“).
+      </p>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        <span class="ph">[Vor- und Nachname]</span>,
+        <span class="ph">[Anschrift]</span>,
+        E-Mail: <span class="ph">[E-Mail-Adresse]</span>.
+        Weitere Angaben im <a href="/impressum.html">Impressum</a>.
+      </p>
+
+      <h2>2. Hosting</h2>
+      <p class="muted">
+        Die Anwendung wird auf <strong>Google Cloud Run</strong> in der Region
+        <span class="ph">[z. B. europe-west3 / Frankfurt]</span> betrieben (Anbieter:
+        Google Cloud EMEA Limited / Google LLC). Beim Aufruf werden technisch
+        notwendige Server-Logdaten (u. a. IP-Adresse, Zeitpunkt, angefragte Ressource,
+        User-Agent) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse an sicherem, störungsfreiem Betrieb).
+      </p>
+
+      <h2>3. Welche Daten wir verarbeiten</h2>
+      <ul>
+        <li><strong>Server-Logdaten</strong> (siehe Hosting).</li>
+        <li><strong>Von dir eingegebene Inhalte</strong>: Text-Prompts, Konfigurationen,
+          ggf. <strong>Sprach-/Audioaufnahmen</strong> (Voice-Eingabe) sowie
+          <strong>hochgeladene Dokumente/PDFs</strong>.</li>
+        <li><strong>Lokale Browser-Speicherung</strong> (<code>localStorage</code>):
+          Einstellungen und ein ggf. eingegebenes Admin-Token verbleiben in deinem
+          Browser und werden nicht zu Analysezwecken übertragen.</li>
+        <li><strong>Serverseitige Ablage</strong>: Eingaben für die Wissensbasis (RAG)
+          und Presets werden serverseitig verarbeitet
+          (<code>.data/vectorstore.json</code>, <code>.data/store.json</code>).</li>
+      </ul>
+
+      <h2>4. Weitergabe an KI-Drittanbieter (inkl. Drittlandübermittlung)</h2>
+      <p class="muted">
+        Zur Erbringung der KI-Funktionen werden Inhalte (je nach genutzter Funktion:
+        Prompts, Audio, Dokumentinhalte) an folgende Auftragsverarbeiter/Dienste
+        übermittelt. Ein Teil davon verarbeitet Daten außerhalb der EU (insbesondere
+        USA); insoweit erfolgt die Übermittlung auf Grundlage von
+        Standardvertragsklauseln bzw. – soweit zertifiziert – dem EU-US Data Privacy
+        Framework. <strong>Bitte den konkreten Status je Anbieter vor Veröffentlichung
+        prüfen und ergänzen.</strong>
+      </p>
+      <table>
+        <thead><tr><th>Dienst</th><th>Zweck</th><th>Übermittelte Daten</th><th>Ort</th></tr></thead>
+        <tbody>
+          <tr><td>Google Gemini (Google)</td><td>Textgenerierung, Embeddings (RAG)</td><td>Prompts, Dokumentinhalte</td><td>EU/USA</td></tr>
+          <tr><td>OpenAI (Whisper)</td><td>Sprache-zu-Text</td><td>Audioaufnahmen</td><td>USA</td></tr>
+          <tr><td>OpenAI (DALL·E / GPT)</td><td>Bildgenerierung, Prüfung</td><td>Prompts</td><td>USA</td></tr>
+          <tr><td>Leonardo AI</td><td>Bildgenerierung</td><td>Prompts</td><td>USA</td></tr>
+          <tr><td>Fal.ai</td><td>Videogenerierung</td><td>Prompts</td><td>USA</td></tr>
+          <tr><td>Make.com (EU)</td><td>Automatisierung/Webhook</td><td>Freigegebene Inhalte</td><td>EU</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">
+        Rechtsgrundlage der Verarbeitung eingegebener Inhalte: Art. 6 Abs. 1 lit. b
+        DSGVO (Erbringung der angefragten Funktion) bzw. lit. a (Einwilligung), soweit
+        einschlägig. <strong>Bitte keine personenbezogenen Daten Dritter in Prompts,
+        Audio oder Uploads eingeben, für die keine Rechtsgrundlage besteht.</strong>
+      </p>
+
+      <h2>5. Speicherdauer</h2>
+      <p class="muted">
+        Server-Logdaten werden nur so lange gespeichert, wie es für den Betrieb
+        erforderlich ist. Serverseitig abgelegte Inhalte (RAG/Presets) bleiben bis zur
+        Löschung bestehen; auf Cloud Run ist der lokale Speicher zudem flüchtig und kann
+        bei Neustart entfallen. <span class="ph">[Konkrete Fristen / Löschkonzept ergänzen]</span>
+      </p>
+
+      <h2>6. Deine Rechte</h2>
+      <p class="muted">
+        Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung
+        (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und
+        Widerspruch (Art. 21) sowie – bei Einwilligung – auf jederzeitigen Widerruf
+        (Art. 7 Abs. 3). Zudem besteht ein Beschwerderecht bei einer
+        Datenschutz-Aufsichtsbehörde (Art. 77). Kontakt: siehe Ziffer 1.
+      </p>
+
+      <h2>7. Hinweis zu KI-generierten Inhalten</h2>
+      <p class="muted">
+        Diese Anwendung erzeugt Texte, Bilder und Videos mit generativer KI. Solche
+        Inhalte können fehlerhaft sein und sind – soweit sie natürliche Personen
+        darstellen oder imitieren – als künstlich erzeugt bzw. bearbeitet zu
+        kennzeichnen (vgl. Transparenzpflichten des EU-AI-Act).
+      </p>
+    </div>
+
+    <footer>
+      <strong>Platzhalter-Hinweis:</strong> Rot markierte Felder
+      <span class="ph">[…]</span> und den Drittanbieter-Transferstatus vor
+      Veröffentlichung prüfen/ergänzen. Diese Vorlage ist ein technischer Entwurf und
+      ersetzt keine Rechtsberatung – eine juristische Prüfung wird ausdrücklich empfohlen.
+      Stand: <span class="ph">[Datum]</span>.
+    </footer>
+  </div>
+</body>
+</html>
