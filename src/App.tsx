@@ -10062,6 +10062,11 @@ export default function App() {
         <p className="text-[10px] text-slate-600 mt-1">
           {t("footerSubText")}
         </p>
+        <p className="mt-2 flex items-center justify-center gap-3 text-[11px]">
+          <a href="/impressum.html" className="text-slate-400 hover:text-white underline underline-offset-2">Impressum</a>
+          <span className="text-slate-700">·</span>
+          <a href="/datenschutz.html" className="text-slate-400 hover:text-white underline underline-offset-2">Datenschutz</a>
+        </p>
       </footer>
 
       <AnimatePresence>
