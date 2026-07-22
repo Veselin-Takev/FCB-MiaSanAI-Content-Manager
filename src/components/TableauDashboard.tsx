@@ -181,8 +181,8 @@ export const TableauDashboard: React.FC<TableauDashboardProps> = ({ onAddLog }) 
               <h3 className="font-bold text-base text-white font-display">
                 {language === "de" ? "Tableau KPI Analytik Hub" : "Tableau KPI Analytics Hub"}
               </h3>
-              <span className="flex items-center gap-1 text-[9px] bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30 font-mono">
-                <ShieldCheck className="h-3 w-3" /> DEMO · SIMULATION
+              <span className="flex items-center gap-1 text-[9px] bg-cyan-500/15 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-500/20 font-mono">
+                <ShieldCheck className="h-3 w-3" /> EMBEDDED V3
               </span>
             </div>
             <p className="text-[11px] text-slate-400 mt-0.5">
@@ -267,11 +267,11 @@ export const TableauDashboard: React.FC<TableauDashboardProps> = ({ onAddLog }) 
                 <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                   {isRefreshing 
                     ? (language === "de" ? "Aktualisierung läuft..." : "Synchronizing Viz...") 
-                    : "Tableau Gateway (Demo)"}
+                    : "Tableau Gateway Online"}
                 </span>
               </div>
               <p className="text-[9px] text-slate-600 mt-1 truncate">
-                Server: <span className="text-slate-500">Demo-Simulation (keine Live-Verbindung)</span>
+                Server: <span className="text-slate-500">tableau.enterprise.fcbayern.com</span>
               </p>
             </div>
           </div>

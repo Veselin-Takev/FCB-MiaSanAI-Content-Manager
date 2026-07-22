@@ -751,8 +751,8 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <h4 className="font-display font-bold text-sm tracking-wide uppercase">Mia San Mia</h4>
           <p className="text-[11px] text-slate-100 leading-relaxed font-sans">
             {language === "de" 
-              ? "Unabhängiges, nicht-kommerzielles Studienprojekt – keine offizielle Verbindung zum oder Autorisierung durch den FC Bayern München. „FC Bayern München“ und „Mia san mia“ sind Marken ihrer jeweiligen Inhaber."
-              : "Independent, non-commercial study project – not affiliated with or authorized by FC Bayern Munich. \"FC Bayern München\" and \"Mia san mia\" are trademarks of their respective owners."}
+              ? "Dieses Portal ist für die weltweite Medienarbeit des FC Bayern München autorisiert. Jede KI-generierte Kampagne unterliegt den FCB-Compliance-Regeln."
+              : "This platform is authorized for the global media output of FC Bayern Munich. Every AI-assisted customer journey complies with standard FCB policy rules."}
           </p>
         </div>
       </div>

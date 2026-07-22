@@ -8,17 +8,8 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "node"
-    ]
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/server/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tests"
-  ]
+  "include": ["src/server/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
