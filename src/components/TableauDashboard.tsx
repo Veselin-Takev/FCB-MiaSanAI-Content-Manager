@@ -182,7 +182,7 @@ export const TableauDashboard: React.FC<TableauDashboardProps> = ({ onAddLog }) 
                 {language === "de" ? "Tableau KPI Analytik Hub" : "Tableau KPI Analytics Hub"}
               </h3>
               <span className="flex items-center gap-1 text-[9px] bg-cyan-500/15 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-500/20 font-mono">
-                <ShieldCheck className="h-3 w-3" /> EMBEDDED V3
+                <ShieldCheck className="h-3 w-3" /> DEMO · SIMULATION
               </span>
             </div>
             <p className="text-[11px] text-slate-400 mt-0.5">
@@ -267,11 +267,11 @@ export const TableauDashboard: React.FC<TableauDashboardProps> = ({ onAddLog }) 
                 <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                   {isRefreshing 
                     ? (language === "de" ? "Aktualisierung läuft..." : "Synchronizing Viz...") 
-                    : "Tableau Gateway Online"}
+                    : "Tableau Gateway (Demo)"}
                 </span>
               </div>
               <p className="text-[9px] text-slate-600 mt-1 truncate">
-                Server: <span className="text-slate-500">tableau.enterprise.fcbayern.com</span>
+                Server: <span className="text-slate-500">Demo-Simulation (keine Live-Verbindung)</span>
               </p>
             </div>
           </div>
@@ -446,7 +446,7 @@ export const TableauDashboard: React.FC<TableauDashboardProps> = ({ onAddLog }) 
                     timestamp: new Date().toLocaleTimeString(),
                     level: "INFO",
                     source: "Tableau Share",
-                    message: `Tableau JS API: Generated secure workbook sharing URL: 'https://tableau.fcbayern.com/embed/kpis?region=${selectedRegion}&time=${selectedTimeRange}'`
+                    message: `Tableau JS API: Generated secure workbook sharing URL: 'https://tableau.demo.local/embed/kpis?region=${selectedRegion}&time=${selectedTimeRange}'`
                   });
                 }}
                 className="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white px-2 py-1 rounded flex items-center gap-1 transition cursor-pointer"

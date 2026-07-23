@@ -31,3 +31,5 @@ Thumbs.db
 
 # Local server persistence (vector store + key/value store)
 .data/
+*.zip
+*.zip
